@@ -1,0 +1,3 @@
+etc/ssl/nginx/*
+nginx-repo.*
+.DS_Store
