@@ -23,15 +23,15 @@ A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add 
 # This works with both GNU and BSD versions of sed:
 
 # replace iphone 7 image to iphone x
-sed -i'' -e  's/iphone_7.png/iphone_x.png/g' index.html
+sed -i '' 's/iphone_7.png/iphone_x.png/g' etc/nginx/html/index.html
 
 # replace iphone x image to iphone 7
-sed -i'' -e 's/iphone_x.png/iphone_7.png/g' index.html
+sed -i '' 's/iphone_x.png/iphone_7.png/g' etc/nginx/html/index.html
 ```
 
 3. Commit and push changes to code repository:
 ```bash
-git commit .; git commit -m "change description"; git push origin master
+git add .; git commit -m "changed phone image"; git push origin master
 ```
 3. Watch the build process in realtime on [Gitlab](https://docs.gitlab.com/ee/ci/quick_start/)
 
