@@ -17,7 +17,18 @@ A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add 
 ## Demos
 
 1. Clone repo to local machine 
-2. Demonstrate a configuration change in the NGINX config or change in the Web App. E.g. Search and replace `iphone_7.png` with `iphone_x.png`. Change and revert as needed
+2. Demonstrate a configuration change in the NGINX config or change in the Web App. E.g. Search and replace `iphone_7.png` with `iphone_x.png`. Change and revert as needed, e.g.
+
+```bash
+# This works with both GNU and BSD versions of sed:
+
+# replace iphone 7 image to iphone x
+sed -i'' -e  's/iphone_7.png/iphone_x.png/g' index.html
+
+# replace iphone x image to iphone 7
+sed -i'' -e 's/iphone_x.png/iphone_7.png/g' index.html
+```
+
 3. Commit and push changes to code repository:
 ```bash
 git commit .; git commit -m "change description"; git push origin master
