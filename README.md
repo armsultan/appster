@@ -12,7 +12,7 @@ A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add 
 4. [Gitlab CICD]((https://docs.gitlab.com/ee/ci/quick_start/)) continuous integration service
 5. Optional: To show continuous Deployment, we need one linux docker host. See [`Setup Production Environment.md`](setup_production_environment.md)
 
-## Other setup Instructions:
+#### Other setup Instructions:
  1. Place the following files in the directories of your build server
     * Retrieve your NGINX Plus Key and Certificate from the NGINX [customer portal](https://cs.nginx.com/) or from an activated evaluation, and copy the `nginx-repo.crt` and `nginx-repo.crt` files into `etc/ssl/nginx/`
  2. Automate a [CICD pipeline using gitlab](https://docs.gitlab.com/ee/ci/pipelines.html). A example gitlab CI/CD pipeline file (`.gitlab-ci.yml`) is provided.
