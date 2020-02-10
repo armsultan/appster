@@ -16,10 +16,12 @@ A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add 
 
 ## Demos
 
-#### 1. Continuous Integration: Update our source repository and automaticly run our pipeline
+### 1. Continuous Integration
+
+#### Update our source repository and automaticly run our pipeline
 
 1. Clone repo to local machine
-2. Demonstrate a configuration change in the NGINX config or change in the Web App. E.g. Search and replace `iphone_7.png` with `iphone_x.png`. Change and revert as needed, e.g.
+2. Demonstrate a configuration change in the NGINX config or change in the Web App. e.g. Search and replace `iphone_7.png` with `iphone_x.png`. Change and revert as needed, e.g.
 
 ```bash
 # This works with both GNU and BSD versions of sed:
@@ -37,12 +39,26 @@ git add .; git commit -m "changed phone image"; git push origin master
 ```
 3. Watch the build process in realtime on [Gitlab](https://docs.gitlab.com/ee/ci/quick_start/)
 
-#### 2. Continuous Deployment: Automate the deployement of our containerized web app to a live environment using Watchtower
+### 1. Continuous Deployment
+
+
+#### Automate the deployement of our containerized web app to a live environment using Watchtower
 
 In this demo we can illustrate how to automate the deployement of our containerized web app to a live environment.
 
-We can use [watchtower](https://containrrr.github.io/watchtower/) to update the running version of your containerized app 
+We will use [watchtower](https://containrrr.github.io/watchtower/) to update the running version of your containerized app 
 simply by pushing our a new image to a image registry. Watchtower will pull down your new image, gracefully shut down the
 existing container(s) and restart it with the same options that were used when it was deployed initially.
 
-See `watchtower and docker-compose setup notes`(watchtower_and_docker-compose_setup.md)
+1. First, follow the setup instructions as outlined in [`Setup Production Environment.md`](setup_production_environment.md)
+
+2. After you push new changes to your source code repository, a Pipeline will kick off and upon a successful build,
+   push the new docker image to the image repository.
+
+3. After 30s have elapsed and there is a new image of our web app available with the tag `latest`, watchtower running on the
+   production server will update the running version of our containerized app by:
+   1. Pull down your new image
+   2. Gracefully shutting down the existing container(s)
+   3. Restart the container(s) with the same options that were used when it was deployed initially
+
+Note: Running a load balacer in front of our containers, with active health checks (such as [NGINX Plus](https://www.nginx.com/products/nginx/), hint hint) will ensure availablity and minimize downtime
