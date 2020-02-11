@@ -49,6 +49,11 @@ git add .; git commit -m "changed phone image"; git push origin master
 
 3. Watch the build process in realtime on [Gitlab](https://docs.gitlab.com/ee/ci/quick_start/)
 
+4. Check out the changes in a web browser. **Tip:** You may need to clear browser cache or load in a private window
+
+![appster iphone7](extra/appster_iphone7.png)
+![appster iphonex](extra/appster_iphonex.png)
+
 ##### Example 2. Update / revert background image
 
 1. Search and replace `#ffb300` with `#512DA8`. Change and revert as needed:
@@ -71,8 +76,10 @@ git add .; git commit -m "changed background image"; git push origin master
 
 3. Watch the build process in realtime on [Gitlab](https://docs.gitlab.com/ee/ci/quick_start/)
 
-![appster iphone7](extra/appster_iphone7.png)
-![appster iphonex](extra/appster_iphonex.png)
+4. Check out the changes in a web browser. **Tip:** You may need to clear browser cache or load in a private window
+
+![background yellow and purple](extra/bg-yellow-purple.png)
+![background purple and yellow](extra/bg-purple-yellow.png)
 
 ### 2. Continuous Deployment
 
