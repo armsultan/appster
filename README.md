@@ -60,8 +60,7 @@ git add .; git commit -m "changed phone image"; git push origin master
 sed -i '' 's/background:linear-gradient(-45deg,#ffb300 33%,transparent 0),linear-gradient(-45deg,#512da8/background:linear-gradient(-45deg,#512da8 33%,transparent 0),linear-gradient(-45deg,#ffb300/g' etc/nginx/html/css/bootstrap.min.css
 
 # Flip background colors - purple to yellow, yellow to purple
-sed -i '' 's/background:linear-gradient(-45deg,#512DA8/background:linear-gradient(-45deg,#ffb300/g' etc/nginx/html/css/bootstrap.min.css
-sed -i '' 's/background:linear-gradient(-45deg,#ffb300/background:linear-gradient(-45deg,#512DA8/g' etc/nginx/html/css/bootstrap.min.css
+sed -i '' 's/background:linear-gradient(-45deg,#512da8 33%,transparent 0),linear-gradient(-45deg,#ffb300/background:linear-gradient(-45deg,#ffb300 33%,transparent 0),linear-gradient(-45deg,#512da8/g' etc/nginx/html/css/bootstrap.min.css
 ```
 
 2. Commit and push changes to code repository:
