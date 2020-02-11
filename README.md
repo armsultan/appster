@@ -104,4 +104,4 @@ existing container(s) and restart it with the same options that were used when i
 
 4. You should be able to see the new changes on port `9090` or `9091`
 
-Note: Running a load balacer in front of our containers, with active health checks (such as [NGINX Plus](https://www.nginx.com/products/nginx/), hint hint) will ensure availablity and minimize downtime
+Note: Running a load balacer in front of our containers, with active health checks (such as [NGINX Plus](https://www.nginx.com/products/nginx/), *hint hint*) will ensure availablity and minimize downtime

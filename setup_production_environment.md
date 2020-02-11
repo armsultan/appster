@@ -17,7 +17,7 @@ the updating and deployement of our containerized web app
 
 ### Create a Credentials File for access to Private Docker Registry
 
- * source: https://mesosphere.github.io/marathon/docs/native-docker-private-registry.html
+Instructions are based on this blog [post](https://mesosphere.github.io/marathon/docs/native-docker-private-registry.html):
 
 1. Log in to your private registry manually. This will create a `~/.docker` directory and a `~/.docker/config.json` file.
 
@@ -135,6 +135,17 @@ The docker containers will start aftern system reboot...
 ### Stop and remove all docker containers and images
 
 ```bash
+# Docker compose cheatsheet:
+docker-compose start
+docker-compose stop
+
+docker-compose pause
+docker-compose unpause
+
+docker-compose ps
+docker-compose up
+docker-compose down
+
 # List all containers (only IDs)
 docker ps -aq
 
