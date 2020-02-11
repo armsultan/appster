@@ -56,10 +56,10 @@ git add .; git commit -m "changed phone image"; git push origin master
 # This works with both GNU and BSD versions of sed:
 
 # Flip background colors - yellow to purple
-sed -i '' 's/#ffb300/#512DA8/g' etc/nginx/html/css/_custom.scss
+sed -i '' 's/-45deg, #ffb300/-45deg, #512DA8/g' etc/nginx/html/css/bootstrap.min.css
 
 # Flip background colors - purple to yellow
-sed -i '' 's/#512DA8/#ffb300/g' etc/nginx/html/css/_custom.scss
+sed -i '' 's/-45deg, #512DA8/-45deg, #ffb300/g' etc/nginx/html/css/bootstrap.min.css
 ```
 
 2. Commit and push changes to code repository:
