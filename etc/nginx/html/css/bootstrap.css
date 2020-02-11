@@ -6557,10 +6557,10 @@ section {
 * Background Colors
 ================================================*/
 .bg-texture {
-  background: linear-gradient(-45deg, #ffb300 33%, transparent 0%), linear-gradient(-45deg, #512DA8 100%, transparent 33%); }
+  background: linear-gradient(-45deg, #512DA8 33%, transparent 0%), linear-gradient(-45deg, #512DA8 100%, transparent 33%); }
 
 .bg-texture-collage {
-  background: linear-gradient(-45deg, #ffb300 33%, transparent 0%), linear-gradient(-45deg, #512DA8 67%, transparent 33%), linear-gradient(-45deg, #ffb300 100%, transparent 67%); }
+  background: linear-gradient(-45deg, #512DA8 33%, transparent 0%), linear-gradient(-45deg, #512DA8 67%, transparent 33%), linear-gradient(-45deg, #512DA8 100%, transparent 67%); }
 
 .bg-alt {
   background-color: #fff; }

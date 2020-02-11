@@ -2,15 +2,14 @@
 
 ![gitlab CICD](extra/gitlab_cicd.png)
 
-A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add licenses**
+A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add [licenses](https://www.nginx.com/free-trial-request/)**
 
 #### Requirements
 
-1. A Linux build server ([Gitlab Runner](https://docs.gitlab.com/ee/ci/runners/README.html)) with docker and [Crossplane](https://github.com/nginxinc/crossplane) installed
-2. Docker images for our NGINX Plus container and [Crossplane](https://github.com/nginxinc/crossplane) test container: Setup [Gitlab repository mirroring](https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html) to my [nginx-plus-dockerfiles](https://github.com/armsultan/nginx-plus-dockerfiles) repo, with the [Gitlab Container Registry](https://docs.gitlab.com/ee/user/packages/container_registry/) for your project enabled
-3. [Gitlab repository mirroring](https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html) to [this repo](https://github.com/armsultan/nginx-plus-dockerfiles) with the [Gitlab Container Registry](https://docs.gitlab.com/ee/user/packages/container_registry/) for your project enabled
-4. [Gitlab CICD]((https://docs.gitlab.com/ee/ci/quick_start/)) continuous integration service
-5. Optional: To show continuous Deployment, we need one linux docker host. See [`Setup Production Environment.md`](setup_production_environment.md)
+1. Continuous Integration: Setup a [Gitlab CICD]((https://docs.gitlab.com/ee/ci/quick_start/)) continuous integration service
+2. A Linux build server ([Gitlab Runner](https://docs.gitlab.com/ee/ci/runners/README.html)) with docker and [Crossplane](https://github.com/nginxinc/crossplane) installed
+3. Docker images for NGINX Plus and [Crossplane](https://github.com/nginxinc/crossplane): Setup [Gitlab repository mirroring](https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html) to my [nginx-plus-dockerfiles](https://github.com/armsultan/nginx-plus-dockerfiles) repo, with the [Gitlab Container Registry](https://docs.gitlab.com/ee/user/packages/container_registry/) for your project enabled
+4. *Optional:* Continuous Deployment: One linux docker host. See [`Setup Production Environment.md`](setup_production_environment.md)
 
 #### Other setup Instructions:
  1. Place the following files in the directories of your build server
@@ -94,5 +93,7 @@ existing container(s) and restart it with the same options that were used when i
    1. Pull down your new image
    2. Gracefully shutting down the existing container(s)
    3. Restart the container(s) with the same options that were used when it was deployed initially
+
+4. You should be able to see the new changes on port `9090` or `9091`
 
 Note: Running a load balacer in front of our containers, with active health checks (such as [NGINX Plus](https://www.nginx.com/products/nginx/), hint hint) will ensure availablity and minimize downtime

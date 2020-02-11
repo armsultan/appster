@@ -5,7 +5,7 @@ the updating and deployement of our containerized web app
 
 #### Requirements:
 
- * Linux host
+ * Linux host with ports `9090` and `9091` open for HTTP
  * [`docker-ce`](https://docs.docker.com/install/linux/docker-ce/)
  * [`docker-compose`](https://docs.docker.com/compose/install/)
 
@@ -45,7 +45,7 @@ ls ~/.dockerconfig.json
 }
 ```
 
-### Confifgure docker-compose to deploy two web servers and Watchtower
+### Configure `docker-compose` to deploy two web servers and `Watchtower`
 
 Using `docker-compose` we will deploy two instances of our NGINX Plus webserver hosting our sample app, `appster`, 
 along with a [Watchtower](https://containrrr.github.io/watchtower/usage-overview/) container
@@ -83,6 +83,18 @@ services:
     ports:
       - '9091:80'
 ```
+
+2. Run the docker-compose stack by running the following command in the same directory:
+
+```bash
+# Start docker compose
+docker-compose up -d
+
+# Stop docker compose
+docker-compose down
+```
+
+3. Access `web1` on port `9090` and `web2` on port `9091`
 
 ### Optional: Setup startup script and cronjob
 

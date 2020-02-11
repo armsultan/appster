@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,h6{
     color: #fff;
 }
 .navbar .nav-item .active, .navbar .nav-link:hover, .navbar .navbar-brand:hover{
-    color: #512DA8 !important;
+    color: #ffb300 !important;
 }
 .hero{
     height: 100vh;
@@ -53,14 +53,14 @@ h1,h2,h3,h4,h5,h6{
     padding-bottom: 10px;
 }  
 a {
-    color: #512DA8;
+    color: #ffb300;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
 }
 a:hover,
 a:focus {
-    color: #512DA8;
+    color: #ffb300;
     outline: 0;
     text-decoration: none;
 }
@@ -78,7 +78,7 @@ section{
     width: 120px;
 }
 .card-outline-primary{
-    border: solid 1px #512DA8;
+    border: solid 1px #ffb300;
 }
 .sticky-navigation{
     top: -100px;
@@ -115,10 +115,10 @@ section{
     background-color: #F9F9FA;
 }
 .bg-primary{
-    background-color: #512DA8 !important;
+    background-color: #ffb300 !important;
 }
 .bg-orange{
-    background-color: #512DA8;
+    background-color: #ffb300;
 }
 /*===============================================
 * Text Colors
@@ -140,10 +140,10 @@ section{
     text-decoration:none;
 }
 .text-primary {
-    color: #512DA8 !important;
+    color: #ffb300 !important;
 }
 .text-orange{
-    color: #512DA8 !important;
+    color: #ffb300 !important;
 }
 /*===============================================
 * Icon Sizes
@@ -170,7 +170,7 @@ section{
 }
 .icon-box{
     color:#fff;
-    background-color: #512DA8;
+    background-color: #ffb300;
     vertical-align: middle;
     border-radius: 50px !important;
     padding: 12px;
@@ -196,7 +196,7 @@ section{
     background: rgba(255, 255, 255, 0.2) !important;
 }
 .btn-white {
-    color: #512DA8;
+    color: #ffb300;
     background-color: #fff;
     border-color: #fff;
 }
@@ -205,8 +205,8 @@ section{
     color: #fff !important;
 }
 .btn-primary{
-    background-color: #512DA8 !important;
-    border-color: #512DA8 !important;
+    background-color: #ffb300 !important;
+    border-color: #ffb300 !important;
 }
 .btn-radius{
     border-radius: 50px;
