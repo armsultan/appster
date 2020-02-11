@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,h6{
     color: #fff;
 }
 .navbar .nav-item .active, .navbar .nav-link:hover, .navbar .navbar-brand:hover{
-    color: #ffb300 !important;
+    color: #512DA8 !important;
 }
 .hero{
     height: 100vh;
@@ -87,23 +87,23 @@ section{
 * Background Colors
 ================================================*/
 .bg-texture{
-    background:-webkit-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+    background:-webkit-linear-gradient(-45deg, #512DA8 33%, transparent 0%),
         linear-gradient(-45deg, #512DA8 100%, transparent 33%);
-    background:-moz-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+    background:-moz-linear-gradient(-45deg, #512DA8 33%, transparent 0%),
         linear-gradient(-45deg, #512DA8 100%, transparent 33%);
-    background:linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+    background:linear-gradient(-45deg, #512DA8 33%, transparent 0%),
         linear-gradient(-45deg, #512DA8 100%, transparent 33%);
 }
 .bg-texture-collage{
-    background:-webkit-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+    background:-webkit-linear-gradient(-45deg, #512DA8 33%, transparent 0%),
         linear-gradient(-45deg, #512DA8 67%, transparent 33%),
-        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
-    background:-moz-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 100%, transparent 67%);
+    background:-moz-linear-gradient(-45deg, #512DA8 33%, transparent 0%),
         linear-gradient(-45deg, #512DA8 67%, transparent 33%),
-        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
-    background:linear-gradient(-45deg, #ffb300 33%, transparent 0%),
+        linear-gradient(-45deg, #512DA8 100%, transparent 67%);
+    background:linear-gradient(-45deg, #512DA8 33%, transparent 0%),
         linear-gradient(-45deg, #512DA8 67%, transparent 33%),
-        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
+        linear-gradient(-45deg, #512DA8 100%, transparent 67%);
 }
 .bg-alt {
     background-color: #fff;
@@ -118,7 +118,7 @@ section{
     background-color: #512DA8 !important;
 }
 .bg-orange{
-    background-color: #ffb300;
+    background-color: #512DA8;
 }
 /*===============================================
 * Text Colors
@@ -143,7 +143,7 @@ section{
     color: #512DA8 !important;
 }
 .text-orange{
-    color: #ffb300 !important;
+    color: #512DA8 !important;
 }
 /*===============================================
 * Icon Sizes

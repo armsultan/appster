@@ -25,7 +25,11 @@ A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add 
 #### Update our source repository and automaticly run our pipeline
 
 1. Clone repo to local machine
-2. Demonstrate a configuration change in the NGINX config or change in the Web App. e.g. Search and replace `iphone_7.png` with `iphone_x.png`. Change and revert as needed, e.g.
+2. Demonstrate a configuration change in the NGINX config or change in the Web App: 
+
+##### Example 1. Update / revert phone image
+
+1. Search and replace `iphone_7.png` with `iphone_x.png`. Change and revert as needed:
 
 ```bash
 # This works with both GNU and BSD versions of sed:
@@ -37,17 +41,40 @@ sed -i '' 's/iphone_7.png/iphone_x.png/g' etc/nginx/html/index.html
 sed -i '' 's/iphone_x.png/iphone_7.png/g' etc/nginx/html/index.html
 ```
 
-3. Commit and push changes to code repository:
+2. Commit and push changes to code repository:
+
 ```bash
 git add .; git commit -m "changed phone image"; git push origin master
 ```
+
+3. Watch the build process in realtime on [Gitlab](https://docs.gitlab.com/ee/ci/quick_start/)
+
+##### Example 2. Update / revert background image
+
+1. Search and replace `#ffb300` with `#512DA8`. Change and revert as needed:
+
+```bash
+# This works with both GNU and BSD versions of sed:
+
+# Flip background colors - yellow to purple
+sed -i '' 's/#ffb300/#512DA8/g' etc/nginx/html/css/_custom.scss
+
+# Flip background colors - purple to yellow
+sed -i '' 's/#512DA8/#ffb300/g' etc/nginx/html/css/_custom.scss
+```
+
+2. Commit and push changes to code repository:
+
+```bash
+git add .; git commit -m "changed background image"; git push origin master
+```
+
 3. Watch the build process in realtime on [Gitlab](https://docs.gitlab.com/ee/ci/quick_start/)
 
 ![appster iphone7](extra/appster_iphone7.png)
 ![appster iphonex](extra/appster_iphonex.png)
 
-### 1. Continuous Deployment
-
+### 2. Continuous Deployment
 
 #### Automate the deployement of our containerized web app to a live environment using Watchtower
 
