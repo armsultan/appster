@@ -2,14 +2,15 @@
 
 ![gitlab CICD](extra/gitlab_cicd.png)
 
-A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/). **Just add [licenses](https://www.nginx.com/free-trial-request/)**
+A CICD demo for [NGINX Plus](https://www.nginx.com/products/nginx/) **web server**.
 
 #### Requirements
 
-1. Continuous Integration: Setup a [Gitlab CICD]((https://docs.gitlab.com/ee/ci/quick_start/)) continuous integration service
-2. A Linux build server ([Gitlab Runner](https://docs.gitlab.com/ee/ci/runners/README.html)) with docker and [Crossplane](https://github.com/nginxinc/crossplane) installed
-3. Docker images for NGINX Plus and [Crossplane](https://github.com/nginxinc/crossplane): Setup [Gitlab repository mirroring](https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html) to my [nginx-plus-dockerfiles](https://github.com/armsultan/nginx-plus-dockerfiles) repo, with the [Gitlab Container Registry](https://docs.gitlab.com/ee/user/packages/container_registry/) for your project enabled
-4. *Optional:* Continuous Deployment: One linux docker host. See [`Setup Production Environment.md`](setup_production_environment.md)
+1. **Just add [licenses](https://www.nginx.com/free-trial-request/)**
+2. Continuous Integration: Setup a [Gitlab CICD]((https://docs.gitlab.com/ee/ci/quick_start/)) continuous integration service
+3. A Linux build server ([Gitlab Runner](https://docs.gitlab.com/ee/ci/runners/README.html)) with docker and [Crossplane](https://github.com/nginxinc/crossplane) installed
+4. Docker images for NGINX Plus and [Crossplane](https://github.com/nginxinc/crossplane): Setup [Gitlab repository mirroring](https://docs.gitlab.com/ee/user/project/repository/repository_mirroring.html) to my [nginx-plus-dockerfiles](https://github.com/armsultan/nginx-plus-dockerfiles) repo, with the [Gitlab Container Registry](https://docs.gitlab.com/ee/user/packages/container_registry/) for your project enabled
+5. *Optional:* Continuous Deployment: One linux docker host. See [`Setup Production Environment.md`](setup_production_environment.md)
 
 #### Other setup Instructions:
  1. Place the following files in the directories of your build server
@@ -56,10 +57,10 @@ git add .; git commit -m "changed phone image"; git push origin master
 # This works with both GNU and BSD versions of sed:
 
 # Flip background colors - yellow to purple
-sed -i '' 's/-45deg, #ffb300/-45deg, #512DA8/g' etc/nginx/html/css/bootstrap.min.css
+sed -i '' 's/background:linear-gradient(-45deg,#ffb300/background:linear-gradient(-45deg,#512DA8/g' etc/nginx/html/css/bootstrap.min.css
 
 # Flip background colors - purple to yellow
-sed -i '' 's/-45deg, #512DA8/-45deg, #ffb300/g' etc/nginx/html/css/bootstrap.min.css
+sed -i '' 's/background:linear-gradient(-45deg,#512DA8/background:linear-gradient(-45deg,#ffb300/g' etc/nginx/html/css/bootstrap.min.css
 ```
 
 2. Commit and push changes to code repository:
