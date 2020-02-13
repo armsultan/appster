@@ -1,4 +1,3 @@
-# Run sequentially
 stages:
   - build
   - test
