@@ -13,16 +13,14 @@ variables:
 build_nginx_container: # CI_JOB_NAME
   stage: build
   script:
-    # - echo $NGINX_REPO_KEY > etc/ssl/nginx/nginx-repo.key
-    # - echo $NGINX_REPO_CRT > etc/ssl/nginx/nginx-repo.crt
-    - cp /etc/ssl/nginx/nginx-repo.* etc/ssl/nginx/
+    - echo $NGINX_REPO_KEY > etc/ssl/nginx/nginx-repo.key
+    - echo $NGINX_REPO_CRT > etc/ssl/nginx/nginx-repo.crt
+    # - cp /etc/ssl/nginx/nginx-repo.* etc/ssl/nginx/
     - docker build -t $NAME_CONTAINER_NGINX .
 
 build_crossplane_container: # CI_JOB_NAME
   stage: build
   script:
-    # - echo $NGINX_REPO_KEY > etc/ssl/nginx/nginx-repo.key
-    # - echo $NGINX_REPO_CRT > etc/ssl/nginx/nginx-repo.crt
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" https://registry.gitlab.com
     - docker pull $CONTAINER_CROSSPLANE
     - cp /etc/ssl/nginx/nginx-repo.* etc/ssl/nginx/
