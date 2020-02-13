@@ -22,11 +22,13 @@ build_crossplane_container: # CI_JOB_NAME
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" https://registry.gitlab.com
     - docker pull $CONTAINER_CROSSPLANE
-    - cp /etc/ssl/nginx/nginx-repo.* etc/ssl/nginx/
 
 test_nginx_conf: # CI_JOB_NAME
   stage: test
   script:
+    # "nginx -T": Output full NGINX config for debugging
+    - docker run --rm -t -a stdout --name $NAME_CONTAINER_NGINX --sysctl net.ipv4.ip_nonlocal_bind=1 -v "$(pwd)/etc/nginx/:/etc/nginx/" $NAME_CONTAINER_NGINX nginx -T
+    # "nginx -t": test NGINX config for config errors
     - docker run --rm -t -a stdout --name $NAME_CONTAINER_NGINX --sysctl net.ipv4.ip_nonlocal_bind=1 -v "$(pwd)/etc/nginx/:/etc/nginx/" $NAME_CONTAINER_NGINX nginx -t
 
 crossplane_nginx_conf: # CI_JOB_NAME
