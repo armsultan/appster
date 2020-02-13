@@ -14,7 +14,7 @@ build_nginx_container: # CI_JOB_NAME
   script:
     - echo $NGINX_REPO_KEY > etc/ssl/nginx/nginx-repo.key
     - echo $NGINX_REPO_CRT > etc/ssl/nginx/nginx-repo.crt
-    - sudo chmod 644 etc/ssl/nginx/*
+    - chmod 644 etc/ssl/nginx/*
     # - cp /etc/ssl/nginx/nginx-repo.* etc/ssl/nginx/
     - docker build -t $NAME_CONTAINER_NGINX .
 
