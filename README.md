@@ -83,7 +83,39 @@ git add .; git commit -m "changed background image"; git push origin master
 
 ### 2. Continuous Deployment
 
-#### Automate the deployement of our containerized web app to a live environment using Watchtower
+Here are some simple examples:
+
+#### Option 1: Remote Docker pull/run commands via SSH
+
+In this example we send `docker` `stop`, `rm`, `login`, `pull` and `run` command
+to our remote server which will stop and run the new docker container with NGINX
+and our web app 
+
+```yaml
+deploy_staging:
+  stage: deploy
+  before_script:
+    - 'which ssh-agent || ( apk add --update openssh )'
+    - eval "$(ssh-agent -s)"
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ssh deployer@$STAGE_WEBSERVER "docker stop appster-staging 2>/dev/null || true"
+    - ssh deployer@$STAGE_WEBSERVER "docker rm -f appster-staging 2>/dev/null || true"
+  script:
+    - echo "Deploy to staging server" 
+    - ssh deployer@$STAGE_WEBSERVER "docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY"
+    - ssh deployer@$STAGE_WEBSERVER "docker pull $CONTAINER_RELEASE_IMAGE"
+    - ssh deployer@$STAGE_WEBSERVER "docker run --name appster-staging -d --restart unless-stopped -p 81:80 -p 8081:8080 $CONTAINER_RELEASE_IMAGE"
+  environment:
+    name: staging
+  only:
+  - master
+
+```
+
+#### Option 2: Automate the deployement of our containerized web app to a live environment using Watchtower
 
 In this demo we can illustrate how to automate the deployement of our containerized web app to a live environment.
 
